@@ -16,9 +16,13 @@ $app = new \Slim\Slim();
 // listagem de usuários
 $app->get('/', function ()
 {
-  include("app\Views\login.create.php");
+  //include("app\Views\login.create.php");
     //$UsersController = new \App\Controllers\UsersController;
     //$UsersController->login();
+
+    //include("app\Views\users.index.php");
+      $UsersController = new \App\Controllers\UsersController;
+      $UsersController->index();
 });
 $app->post('/login', function ()
 {
