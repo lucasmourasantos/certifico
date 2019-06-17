@@ -144,7 +144,7 @@
               <li class="nav-item active dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastros</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown01">
-                      <a class="dropdown-item" href="instituicao.create.php">Instituição</a>
+                      <a class="dropdown-item" href="instituicao">Instituição</a>
                       <hr class="divider">
                       <a class="dropdown-item" href="evento">Evento</a>
                       <hr class="divider">
