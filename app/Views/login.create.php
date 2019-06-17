@@ -24,6 +24,6 @@
             <input class="btn btn-lg btn-primary btn-block" type="submit" name="login" value="Logar">
             <!--<button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>-->
 
-            <p class="mt-3 mb-1">Ainda não é membro? <a href="login-novo">Cadastre-se </a> </p>
+            <p class="mt-3 mb-1">Ainda não é membro? <a href="app\Views\login.cad.php">Cadastre-se </a> </p>
             <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
         </form>
