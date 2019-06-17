@@ -16,8 +16,9 @@ $app = new \Slim\Slim();
 // listagem de usuários
 $app->get('/', function ()
 {
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->login();
+  include("app\Views\login.create.php");
+    //$UsersController = new \App\Controllers\UsersController;
+    //$UsersController->login();
 });
 $app->post('/login', function ()
 {
@@ -31,45 +32,53 @@ $app->get('/logout', function ()
 });
 $app->get('/login-novo', function ()
 {
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->login_cad();
+  include("app\Views\login.cad.php");
+    //$UsersController = new \App\Controllers\UsersController;
+    //$UsersController->login_cad();
 });
 $app->get('/index-adm', function ()
 {
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->index();
+  include("app\Views\users.index.php");
+    //$UsersController = new \App\Controllers\UsersController;
+    //$UsersController->index();
 });
 // adição de usuário
 // exibe o formulário de cadastro
 $app->get('/instituicao', function ()
 {
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->cad_instituicao();
+  include("app\Views\instituicao.create.php");
+    //$UsersController = new \App\Controllers\UsersController;
+    //$UsersController->cad_instituicao();
 });
 $app->get('/evento', function ()
 {
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->cad_evento();
+  include("app\Views\\evento.create.php");
+    //$UsersController = new \App\Controllers\UsersController;
+    //$UsersController->cad_evento();
 });
 $app->get('/curso', function ()
 {
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->cad_curso();
+  include("app\Views\curso.create.php");
+    //$UsersController = new \App\Controllers\UsersController;
+    //$UsersController->cad_curso();
 });
 $app->get('/inscricao', function ()
 {
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->cad_inscricao();
+  include("app\Views\inscricao.create.php");
+    //$UsersController = new \App\Controllers\UsersController;
+    //$UsersController->cad_inscricao();
 });
 $app->get('/certificado', function ()
 {
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->cad_certificado();
+  include("app\Views\certificado.create.php");
+    //$UsersController = new \App\Controllers\UsersController;
+    //$UsersController->cad_certificado();
 });
 $app->get('/participante', function ()
 {
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->cad_participante();
+  include("app\Views\participante.create.php");
+    //$UsersController = new \App\Controllers\UsersController;
+    //$UsersController->cad_participante();
 });
 
 $app->get('/rel', function ()
