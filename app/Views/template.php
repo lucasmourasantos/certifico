@@ -144,36 +144,36 @@
               <li class="nav-item active dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastros</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown01">
-                      <a class="dropdown-item" href="/instituicao">Instituição</a>
+                      <a class="dropdown-item" href="instituicao">Instituição</a>
                       <hr class="divider">
-                      <a class="dropdown-item" href="/evento">Evento</a>
+                      <a class="dropdown-item" href="evento">Evento</a>
                       <hr class="divider">
-                      <a class="dropdown-item" href="/curso">Cursos</a>
-                      <a class="dropdown-item" href="/inscricao">Inscrição</a>
+                      <a class="dropdown-item" href="curso">Cursos</a>
+                      <a class="dropdown-item" href="inscricao">Inscrição</a>
                       <hr class="divider">
-                      <a class="dropdown-item" href="/certificado">Certificado</a>
+                      <a class="dropdown-item" href="certificado">Certificado</a>
                       <hr class="divider">
-                      <a class="dropdown-item" href="/participante">Participantes</a>
+                      <a class="dropdown-item" href="participante">Participantes</a>
                   </div>
               </li>
 
               <li class="nav-item active dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatórios</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown01">
-                      <a class="dropdown-item" href="/rel" target="_blank">Participantes Inscritos</a>
+                      <a class="dropdown-item" href="rel" target="_blank">Participantes Inscritos</a>
                   </div>
               </li>
 
               <li class="nav-item active dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Certificados</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown01">
-                      <a class="dropdown-item" href="/emitir_cert">Emitir Certificados</a>
-                      <a class="dropdown-item" href="/verificar_cert">Validar Certificado</a>
+                      <a class="dropdown-item" href="emitir_cert">Emitir Certificados</a>
+                      <a class="dropdown-item" href="verificar_cert">Validar Certificado</a>
                   </div>
               </li>
 
               <li class="nav-item active">
-                  <a class="nav-link" href="/logout">Sair</a>
+                  <a class="nav-link" href="logout">Sair</a>
               </li>
             </ul>
         </div>

@@ -28,7 +28,7 @@ public function sign() {
 
   if (User::sign($usuario, $senha))
   {
-      header('Location: /index-adm');
+      header('Location: index-adm');
       exit;
   }else{
     echo "<script>
