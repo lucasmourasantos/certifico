@@ -17,9 +17,28 @@ $app = new \Slim\Slim();
 $app->get('/', function ()
 {
     $UsersController = new \App\Controllers\UsersController;
+    $UsersController->login();
+});
+$app->post('/login', function ()
+{
+    $UsersController = new \App\Controllers\UsersController;
+    $UsersController->sign();
+});
+$app->get('/logout', function ()
+{
+    $UsersController = new \App\Controllers\UsersController;
+    $UsersController->logout();
+});
+$app->get('/login-novo', function ()
+{
+    $UsersController = new \App\Controllers\UsersController;
+    $UsersController->login_cad();
+});
+$app->get('/index-adm', function ()
+{
+    $UsersController = new \App\Controllers\UsersController;
     $UsersController->index();
 });
-
 // adição de usuário
 // exibe o formulário de cadastro
 $app->get('/instituicao', function ()

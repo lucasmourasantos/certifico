@@ -9,6 +9,36 @@ class UsersController {
 * Classe com um método para cada rota definida no index.php
 */
 /** * Listagem de usuários */
+public function login() {
+  \App\View::make('login.create');
+}
+public function logout() {
+  if (User::signOut())
+  {
+      header('Location: /');
+      exit;
+  }
+}
+public function login_cad() {
+  \App\View::make('login.cad');
+}
+public function sign() {
+  $usuario = isset($_POST['usuario']) ? $_POST['usuario'] : null;
+  $senha = isset($_POST['senha']) ? $_POST['senha'] : null;
+
+  if (User::sign($usuario, $senha))
+  {
+      header('Location: /index-adm');
+      exit;
+  }else{
+    echo "<script>
+        alert ('Usuario ou senha invalidos!');
+        window.location.href= '/';
+        </script>";
+    $message = '<label>Dados incorretos.</label>';
+  }
+  //\App\View::make('login.cad');
+}
   public function index() {
     \App\View::make('users.index');
   }

@@ -33,7 +33,7 @@
                         <?php if (count($cursos) > 0): ?>
                             <?php foreach ($cursos as $curso): ?>
 
-                                <option value="<?php echo $curso['id']; ?>"><?php echo Utf8_encode($curso['nome']); ?></option>
+                                <option value="<?php echo $curso['id']; ?>"><?php echo Utf8_encode($curso['nome']); ?> - <?php echo Utf8_encode($curso['turno']); ?></option>
 
                             <?php endforeach; ?>
 

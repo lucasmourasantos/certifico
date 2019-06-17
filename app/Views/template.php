@@ -50,6 +50,7 @@
     <!-- Custom styles for this template -->
     <link href="app\Views\css\starter-template.css" rel="stylesheet">
     <link href="app\Views\css\form-validation.css" rel="stylesheet">
+    <link href="app\Views\css\signin.css" rel="stylesheet">
 
     <!-- Adicionando Javascript Busca Endereço pelo CEP-->
         <script type="text/javascript" >
@@ -143,16 +144,16 @@
               <li class="nav-item active dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastros</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown01">
-                      <a class="dropdown-item" href="instituicao">Instituição</a>
+                      <a class="dropdown-item" href="/instituicao">Instituição</a>
                       <hr class="divider">
-                      <a class="dropdown-item" href="evento">Evento</a>
+                      <a class="dropdown-item" href="/evento">Evento</a>
                       <hr class="divider">
-                      <a class="dropdown-item" href="curso">Cursos</a>
-                      <a class="dropdown-item" href="inscricao">Inscrição</a>
+                      <a class="dropdown-item" href="/curso">Cursos</a>
+                      <a class="dropdown-item" href="/inscricao">Inscrição</a>
                       <hr class="divider">
-                      <a class="dropdown-item" href="certificado">Certificado</a>
+                      <a class="dropdown-item" href="/certificado">Certificado</a>
                       <hr class="divider">
-                      <a class="dropdown-item" href="participante">Participantes</a>
+                      <a class="dropdown-item" href="/participante">Participantes</a>
                   </div>
               </li>
 
@@ -166,20 +167,15 @@
               <li class="nav-item active dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Certificados</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown01">
-                      <a class="dropdown-item" href="emitir_cert">Emitir Certificados</a>
-                      <a class="dropdown-item" href="verificar_cert">Validar Certificado</a>
+                      <a class="dropdown-item" href="/emitir_cert">Emitir Certificados</a>
+                      <a class="dropdown-item" href="/verificar_cert">Validar Certificado</a>
                   </div>
               </li>
 
               <li class="nav-item active">
-                  <a class="nav-link" href="#">Sair</a>
+                  <a class="nav-link" href="/logout">Sair</a>
               </li>
             </ul>
-            <form class="navbar-form pull-right">
-              <input class="span2" type="text" placeholder="Email">
-              <input class="span2" type="password" placeholder="Senha">
-              <button type="submit" style="padding: 2px 8px 2px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">Login</button>
-            </form>
         </div>
     </nav>
 

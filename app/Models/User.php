@@ -1,5 +1,6 @@
 <?php
 namespace App\Models;
+session_start();
 
 use App\DB;
 
@@ -8,6 +9,35 @@ class User {
 * classe para manipular as tabelas do BD
 */
 /** * Busca usuários * * Se o ID não for passado, busca todos. Caso contrário, filtra pelo ID especificado. */
+public static function sign($usuario, $senha) {
+$DB = new DB;
+  if (empty($usuario) || empty($senha)) {
+          $message = '<label>All fields are required</label>';
+      } else {
+          $query = "SELECT * FROM users WHERE usuario = :usuario AND senha = :senha";
+          $statement = $DB->prepare($query);
+          $statement->execute(
+                  array(
+                      'usuario' => $usuario,
+                      'senha' => md5($senha) //Criptografar senha antes de salvá-la
+                  )
+          );
+          $count = $statement->rowCount();
+          if ($count > 0) {
+              $_SESSION["usuario"] = $_POST["usuario"];
+              return true;
+          } else {
+              return false;
+          }
+      }
+}
+
+public static function signOut() {
+  //logout.php
+  session_destroy();
+              return true;
+}
+
 public static function selectAll() {
 
   $sql = sprintf("SELECT * FROM instituicao order by nome ASC");
