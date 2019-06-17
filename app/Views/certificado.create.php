@@ -1,5 +1,3 @@
-<?php include("head.php"); ?>
-
 <div class="container">
     <div class="py-1">
         <img class="d-block mx-auto mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
@@ -54,4 +52,3 @@
             </form>
         </div>
     </div>
-<?php include("footer.php"); ?>

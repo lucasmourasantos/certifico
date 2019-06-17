@@ -1,4 +1,3 @@
-<?php include("head.php"); ?>
 
 <div class="container">
     <div class="py-1">
@@ -182,4 +181,3 @@
 
     });
     </script>
-<?php include("footer.php"); ?>

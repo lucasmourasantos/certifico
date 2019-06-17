@@ -1,4 +1,3 @@
-<?php include("head.php"); ?>
 <form class="form-signin" method="post" action="server.php">
             <!--Mostrar validação de erros-->
             <?php //include('errors.php'); ?>
@@ -32,4 +31,3 @@
             <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
 
         </form>
-<?php include("footer.php"); ?>

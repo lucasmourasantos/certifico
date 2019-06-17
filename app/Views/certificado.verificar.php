@@ -1,4 +1,3 @@
-<?php include("head.php"); ?>
 
 <div class="container">
 
@@ -149,4 +148,3 @@ $(document).ready(function() {
 
 });
 </script>
-<?php include("footer.php"); ?>

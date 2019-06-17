@@ -1,4 +1,3 @@
-<?php include("head.php"); ?>
 
 <div class="container">
     <div class="py-1 text-center">
@@ -23,5 +22,3 @@
             </form>
         </div>
     </div>
-    
-<?php include("footer.php"); ?>
