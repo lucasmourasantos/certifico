@@ -1,7 +1,5 @@
-
-<div class="container">
     <div class="py-1 text-center">
-        <img class="d-block mx-auto mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <img class="d-block mx-auto mb-4" src="app\Views\img\icone_certifico_site.png" alt="" width="72" height="72">
         <h2>Cadastro de Curso/Palestra</h2>
     </div>
 
