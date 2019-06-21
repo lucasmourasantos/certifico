@@ -50,7 +50,9 @@
     <!-- Custom styles for this template -->
     <link href="app\Views\css\starter-template.css" rel="stylesheet">
     <link href="app\Views\css\form-validation.css" rel="stylesheet">
+<!--
     <link href="app\Views\css\signin.css" rel="stylesheet">
+  -->
 
     <!-- Adicionando Javascript Busca Endereço pelo CEP-->
         <script type="text/javascript" >

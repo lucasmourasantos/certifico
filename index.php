@@ -6,11 +6,11 @@ require 'vendor/autoload.php';
 // inclui o arquivo de inicialização
 require 'init.php';
 // instancia o Slim, habilitando os erros (útil para debug, em desenvolvimento)
-$app = new \Slim\Slim();
-/*$app = new \Slim\App([ 'settings' => [
+//$app = new \Slim\Slim();
+$app = new \Slim\App([ 'settings' => [
         'displayErrorDetails' => true
     ]
-]);*/
+]);
 
 // página inicial
 // listagem de usuários
@@ -42,7 +42,7 @@ $app->get('/index-adm', function ()
 });
 // adição de usuário
 // exibe o formulário de cadastro
-$app->get('/instituicao.create.php', function ()
+$app->get('/instituicao', function ()
 {
     $UsersController = new \App\Controllers\UsersController;
     $UsersController->cad_instituicao();
