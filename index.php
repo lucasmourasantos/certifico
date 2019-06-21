@@ -54,7 +54,6 @@ $app->get('/evento', function ()
 });
 $app->get('/curso', function ()
 {
-  include("app\Views\curso.create.php");
     $UsersController = new \App\Controllers\UsersController;
     $UsersController->cad_curso();
 });
