@@ -18,7 +18,7 @@ $app->get('/', function ()
 {
   //include("app\Views\login.create.php");
     $UsersController = new \App\Controllers\UsersController;
-    $UsersController->login();
+    $UsersController->index();
 });
 $app->post('/login', function ()
 {
