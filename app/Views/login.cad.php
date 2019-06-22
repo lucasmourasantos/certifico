@@ -1,4 +1,4 @@
-<?php include_once('app\Views\parts\header-adm-login.php'); ?>
+<?php include_once('parts/header-adm-login.php'); ?>
 <form class="form-signin" method="post" action="/save_cad_login">
     <!--Mostrar validação de erros-->
     <?php //include('errors.php'); ?>
@@ -31,4 +31,4 @@
       <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
     </div>
 </form>
-<?php include_once('app\Views\parts\footer.php'); ?>
+<?php include_once('parts/footer.php'); ?>

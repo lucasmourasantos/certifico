@@ -1,4 +1,4 @@
-<?php include_once('app\Views\parts\header-adm-login.php'); ?>
+<?php include_once('parts/header-adm-login.php'); ?>
 <form class="form-signin" method="POST" action="/login">
     <div class="py-1 text-center">
         <img class="mb-4" src="app\Views\img\Logo Certifico Resumida.png" alt="" width="72" height="72">
@@ -29,4 +29,4 @@
       <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
     </div>
 </form>
-<?php include_once('app\Views\parts\footer.php'); ?>
+<?php include_once('parts/footer.php'); ?>

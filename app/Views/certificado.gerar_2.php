@@ -1,4 +1,4 @@
-<?php include_once('app\Views\parts\header-adm.php'); ?>
+<?php include_once('parts/header-adm.php'); ?>
     <div class="py-1">
         <img class="d-block mx-auto mb-4" src="app\Views\img\icone_certifico_site.png" alt="" width="72" height="72">
         <h2>Gere seu certificado online</h2>
@@ -47,4 +47,4 @@
                     </div>
             </div>
     </div>
-<?php include_once('app\Views\parts\footer.php'); ?>
+<?php include_once('parts/footer.php'); ?>

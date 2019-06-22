@@ -1,4 +1,4 @@
-<?php include_once('app\Views\parts\header.php'); ?>
+<?php include_once('parts/header.php'); ?>
     <div class="py-1">
         <img class="d-block mx-auto mb-4" src="app\Views\img\icone_certifico_site.png" alt="" width="72" height="72">
         <h2>Inscrições Online</h2>
@@ -55,4 +55,4 @@
 <script type="text/javascript" src="app\Views\js\jsapi.js"></script>
 <script src="app\Views\js\jquery.min.js"></script>
 -->
-<?php include_once('app\Views\parts\footer.php'); ?>
+<?php include_once('parts/footer.php'); ?>
