@@ -1,4 +1,4 @@
-<?php include_once('app\Views\parts\header-adm.php'); ?>
+<?php include_once('app\Views\parts\header.php'); ?>
     <div class="py-1 text-center">
         <img class="d-block mx-auto mb-4" src="app\Views\img\icone_certifico_site.png" alt="" width="72" height="72">
         <h2>Cadastro de Participantes</h2>
@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-12 order-md-1">
             <h4 class="mb-3">Dados Pessoais</h4>
-            <form class="needs-validation" action="/save_participante" method="POST" novalidate>
+            <form class="needs-validation" action="/save_participante_users" method="POST" novalidate>
                 <div class="row">
                     <div class="col-md-8 mb-3">
                         <label for="nome">Nome Completo</label>

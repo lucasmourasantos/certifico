@@ -32,6 +32,32 @@ $DB = new DB;
       }
 }
 
+public static function save_cad_login($nome, $email, $password_1, $password_2) {
+$DB = new DB;
+  if (empty($nome) || empty($email) || empty($password_1) || empty($password_2)) {
+          $message = '<label>All fields are required</label>';
+      } else {
+        // insere no banco
+        $sql = "INSERT INTO users (usuario, email, senha)
+                VALUES(:nome, :email, :password_1)";
+        $stmt = $DB->prepare($sql);
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password_1', md5($password_1));
+
+        if ($stmt->execute())
+        {
+            return true;
+        }
+        else
+        {
+            echo "Erro ao cadastrar";
+            print_r($stmt->errorInfo());
+            return false;
+        }
+      }
+}
+
 public static function signOut() {
   //logout.php
   session_destroy();

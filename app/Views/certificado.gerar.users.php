@@ -1,4 +1,4 @@
-<?php include_once('app\Views\parts\header-adm.php'); ?>
+<?php include_once('app\Views\parts\header.php'); ?>
     <div class="py-1">
         <img class="d-block mx-auto mb-4" src="app\Views\img\icone_certifico_site.png" alt="" width="72" height="72">
         <h2>Gere seu certificado online</h2>
@@ -6,7 +6,7 @@
     <br>
     <div class="row">
         <div class="col-md-12 order-md-1">
-            <form class="form-horizontal" action="/emitir_certificado" method="post"  id="contact_form">
+            <form class="form-horizontal" action="/emitir_certificado_users" method="post"  id="contact_form">
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="cpf">CPF</label>

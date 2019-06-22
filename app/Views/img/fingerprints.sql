@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/06/2019 às 02:33
+-- Tempo de geração: 23/06/2019 às 00:03
 -- Versão do servidor: 10.3.16-MariaDB
 -- Versão do PHP: 7.3.6
 
@@ -55,14 +55,14 @@ INSERT INTO `certificado` (`id`, `evento_id`, `layout`, `ass`) VALUES
 CREATE TABLE `curso` (
   `id` int(10) UNSIGNED NOT NULL,
   `evento_id` int(10) UNSIGNED NOT NULL,
-  `nome` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `ministrante` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `ministrante` varchar(255) DEFAULT NULL,
   `ch` int(10) UNSIGNED DEFAULT NULL,
   `ch_min` int(10) UNSIGNED DEFAULT NULL,
   `inicio` varchar(10) DEFAULT NULL,
   `fim` varchar(10) DEFAULT NULL,
-  `turno` varchar(5) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `turno` varchar(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Despejando dados para a tabela `curso`
@@ -71,22 +71,22 @@ CREATE TABLE `curso` (
 INSERT INTO `curso` (`id`, `evento_id`, `nome`, `ministrante`, `ch`, `ch_min`, `inicio`, `fim`, `turno`) VALUES
 (1, 1, 'SEGURANÇA PARA APLICAÇÕES WEB', 'Manoel Messias', 12, 8, '12/02/2019', '15/02/2019', 'Manhã'),
 (2, 1, 'DESIGN RESPONSIVO E UX', 'Jesiel', 12, 8, '12/02/2019', '15/02/2019', 'Tarde'),
-(3, 1, 'CLOUD COMPUTING', 'Rog?rio', 12, 8, '12/02/2019', '15/02/2019', 'Manhã'),
-(4, 1, 'BANCO DE DADOS PARA WEB', 'Rog?rio', 12, 10, '12/02/2019', '15/02/2019', 'Tarde'),
-(5, 1, 'PROGRAMAÇÃO WEB BACK END', 'Jo?o Paulo', 12, 8, '12/02/2019', '15/02/2019', 'Noite'),
+(3, 1, 'CLOUD COMPUTING', 'Rogério', 12, 8, '12/02/2019', '15/02/2019', 'Manhã'),
+(4, 1, 'BANCO DE DADOS PARA WEB', 'Rogério', 12, 10, '12/02/2019', '15/02/2019', 'Tarde'),
+(5, 1, 'PROGRAMAÇÃO WEB BACK END', 'João Paulo', 12, 8, '12/02/2019', '15/02/2019', 'Noite'),
 (6, 4, 'Ecologia e Ecossistemas', 'Msc Professor Visitante', 17, 8, '12/02/2019', '15/02/2019', 'Manhã'),
 (7, 4, 'Citologia', 'Professor', 12, 8, '12/02/2019', '15/02/2019', 'Tarde'),
 (8, 4, 'Protozoários', 'Outro Professor', 12, 8, '12/02/2019', '15/02/2019', 'Noite'),
 (9, 3, 'Gestão de Microempresas', 'Professor Local', 12, 8, '12/02/2019', '15/02/2019', 'Tarde'),
-(10, 3, 'Acupuntura', 'Virg?nia Portela', 12, 8, '12/02/2019', '15/02/2019', 'Manhã'),
-(11, 3, 'Massoterapia', 'Virg?nia Leila', 12, 8, '12/02/2019', '15/02/2019', 'Manhã'),
+(10, 3, 'Acupuntura', 'Virgínia Portela', 12, 8, '12/02/2019', '15/02/2019', 'Manhã'),
+(11, 3, 'Massoterapia', 'Virgínia Leila', 12, 8, '12/02/2019', '15/02/2019', 'Manhã'),
 (12, 2, 'Robótica', 'Claudio', 12, 8, '12/02/2019', '15/02/2019', 'Noite'),
 (13, 2, 'Análise de Imagens de Ressonância Magnética', 'Marcos', 12, 8, '12/02/2019', '15/02/2019', 'Tarde'),
 (14, 2, 'Enfermagem Domiciliar', 'Pedro', 12, 8, '12/02/2019', '15/02/2019', 'Manhã'),
 (15, 5, 'Curso I UNOPAR', 'Professor', 12, 8, '12/02/2019', '15/02/2019', 'Manhã'),
 (16, 5, 'Curso II UNOPAR', 'Professor', 12, 8, '12/02/2019', '15/02/2019', 'Noite'),
 (17, 5, 'Curso III UNOPAR', 'Professor', 12, 8, '12/02/2019', '15/02/2019', 'Tarde'),
-(18, 6, 'UNINTER CURSO I', 'Professor de l? mesmo', 10, 8, '10/05/2019', '12/05/2019', 'Manhã'),
+(18, 6, 'UNINTER CURSO I', 'Professor de TI mesmo', 10, 8, '10/05/2019', '12/05/2019', 'Manhã'),
 (19, 6, 'UNINTER CURSO II', 'Professor', 12, 8, '12/02/2019', '11/11/1111', 'Noite');
 
 -- --------------------------------------------------------
@@ -98,8 +98,8 @@ INSERT INTO `curso` (`id`, `evento_id`, `nome`, `ministrante`, `ch`, `ch_min`, `
 CREATE TABLE `evento` (
   `id` int(10) UNSIGNED NOT NULL,
   `instituicao_id` int(10) UNSIGNED NOT NULL,
-  `nome` varchar(255) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nome` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Despejando dados para a tabela `evento`
@@ -111,7 +111,8 @@ INSERT INTO `evento` (`id`, `instituicao_id`, `nome`) VALUES
 (3, 4, 'Semana Científica'),
 (4, 2, 'SEMEAU'),
 (5, 5, 'Curso UNOPAR'),
-(6, 6, 'Curso UNINTER');
+(6, 6, 'Curso UNINTER'),
+(12, 7, 'NÃƒÂ£o pode ser ÃƒÂ© msm');
 
 -- --------------------------------------------------------
 
@@ -121,8 +122,8 @@ INSERT INTO `evento` (`id`, `instituicao_id`, `nome`) VALUES
 
 CREATE TABLE `instituicao` (
   `id` int(10) UNSIGNED NOT NULL,
-  `nome` varchar(255) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nome` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Despejando dados para a tabela `instituicao`
@@ -145,19 +146,19 @@ INSERT INTO `instituicao` (`id`, `nome`) VALUES
 
 CREATE TABLE `participante` (
   `id` int(10) UNSIGNED NOT NULL,
-  `nome` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
   `sexo` varchar(50) DEFAULT NULL,
   `rg` varchar(11) DEFAULT NULL,
   `cpf` varchar(14) DEFAULT NULL,
   `data_nasc` varchar(10) DEFAULT NULL,
   `cep` varchar(10) DEFAULT NULL,
-  `rua` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `bairro` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `cidade` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `estado` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `rua` varchar(255) DEFAULT NULL,
+  `bairro` varchar(255) DEFAULT NULL,
+  `cidade` varchar(255) DEFAULT NULL,
+  `estado` varchar(255) DEFAULT NULL,
   `f1` blob DEFAULT NULL,
   `fone` varchar(15) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Despejando dados para a tabela `participante`
@@ -264,10 +265,10 @@ INSERT INTO `ponto` (`id`, `curso_id`, `participante_id`, `data_2`, `hora`) VALU
 
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
-  `usuario` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `senha` varchar(255) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `usuario` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `senha` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Despejando dados para a tabela `users`
@@ -289,7 +290,7 @@ CREATE TABLE `validacao` (
   `nome` varchar(255) DEFAULT NULL,
   `curso` varchar(255) DEFAULT NULL,
   `codigo` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Despejando dados para a tabela `validacao`
@@ -301,7 +302,11 @@ INSERT INTO `validacao` (`id`, `cpf`, `nome`, `curso`, `codigo`) VALUES
 (3, '046.028.433-95', 'Lucas de Moura Santos', 'Robótica', '9mxc7he'),
 (4, '299.016.263-15', 'Bruna Fiori Castro', 'Protozoários', 'vaogRjW'),
 (5, '046.028.433-95', NULL, 'Robótica', 'JrxlThA'),
-(6, '046.028.433-95', 'Lucas de Moura Santos', 'CLOUD COMPUTING', 'gbWgznE');
+(6, '046.028.433-95', 'Lucas de Moura Santos', 'CLOUD COMPUTING', 'gbWgznE'),
+(7, '046.028.433-95', 'Lucas de Moura Santos', 'CLOUD COMPUTING', 'VVyXH48'),
+(8, '046.028.433-95', 'Lucas de Moura Santos', 'BANCO DE DADOS PARA WEB', 'FrKDv0R'),
+(9, '046.028.433-95', NULL, 'Robótica', 'YdHbck2'),
+(10, '046.028.433-95', NULL, 'Robótica', 'mlwUoPd');
 
 --
 -- Índices de tabelas apagadas
@@ -389,7 +394,7 @@ ALTER TABLE `curso`
 -- AUTO_INCREMENT de tabela `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `instituicao`
@@ -419,7 +424,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `validacao`
 --
 ALTER TABLE `validacao`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

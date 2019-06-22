@@ -55,31 +55,32 @@ class myPDF extends FPDF {
 //        $this->Image("layout_ass/'".$layout."'.png", 0, 0, 299);
 //    }
 
-    function viewTable($DB, $cpf, $curso, $id, $id_curso) {
+    function viewTable($DB) {
 
       // --------- Variáveis do Formulário ----- //
-          /*if (isset($_POST['emitir'])) {
+          //if (isset($_POST['emitir'])) {
               $cpf = $_POST['cpf'];
               $curso = $_POST['curso'];
               $id_participante = $_POST['id'];
               $id_curso = $_POST['id_curso'];
-          }*/
-          if (!empty($objetos)):
+          //}
+
+          /*if (!empty($objetos)):
               $cpf = $objetos[0];
               $curso = $objetos[1];
               $id_participante = $objetos[2];
               $id_curso = $objetos[3];
-          endif;
+          endif;*/
 
         $stmt1 = $DB->query("SELECT COUNT(hora) as result FROM ponto WHERE curso_id = '" . $id_curso . "' and participante_id = '" . $id_participante . "'");
         $result = null;
 
-        if (count($stmt1)) {
+        if (!empty($stmt1)) {
             foreach ($stmt1 as $res) {
                 $result = $res['result'];
             }
         }
-        if ($result <= 1) {
+        if ($result >= 1) {
 
             // --------- Variáveis que podem vir de um banco de dados por exemplo ----- //
             $stmt = $DB->query("select p.cpf, p.nome, c.nome as curso, c.ch, c.inicio, c.fim, e.nome as evento,
@@ -146,7 +147,7 @@ class myPDF extends FPDF {
             echo '</script>';
 
             echo '<script language="javascript">';
-            echo 'location.href="/emitir_cert";';
+            echo 'location.href="/emitir_cert_users";';
             echo '</script>';
         }
     }
@@ -158,7 +159,7 @@ $pdf->Open();
 $pdf->AliasNbPages();
 $pdf->AddPage('L', 'A4', 0); //'P' = Portrait (Retrato) e 'L' = Landscape (Paisagem)
 ob_clean(); // Limpa o buffer de saída
-$pdf->viewTable($DB, $cpf, $curso, $id, $id_curso);
+$pdf->viewTable($DB);
 $pdf->Output();
 exit;
 ?>

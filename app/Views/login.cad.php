@@ -1,4 +1,5 @@
-<form class="form-signin" method="post" action="server.php">
+<?php include_once('app\Views\parts\header-adm-login.php'); ?>
+<form class="form-signin" method="post" action="/save_cad_login">
     <!--Mostrar validação de erros-->
     <?php //include('errors.php'); ?>
 
@@ -26,7 +27,8 @@
 
     <button class="btn btn-lg btn-primary btn-block" type="submit" name="register">Cadastrar</button>
 
-      <p class="mt-3 mb-1">Já é membro? <a href="/">Fazer login <a/></p>
+      <p class="mt-3 mb-1">Já é membro? <a href="/adm-login">Fazer login <a/></p>
       <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
     </div>
 </form>
+<?php include_once('app\Views\parts\footer.php'); ?>

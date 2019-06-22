@@ -1,3 +1,4 @@
+<?php include_once('app\Views\parts\header-adm.php'); ?>
     <div class="py-1 text-center">
         <img class="d-block mx-auto mb-4" src="app\Views\img\icone_certifico_site.png" alt="" width="72" height="72">
         <h2>Cadastro de Instituição.</h2>
@@ -20,3 +21,4 @@
             </form>
         </div>
     </div>
+<?php include_once('app\Views\parts\footer.php'); ?>

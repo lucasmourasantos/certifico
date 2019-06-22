@@ -1,4 +1,4 @@
-<?php include_once('app\Views\parts\header-adm.php'); ?>
+<?php include_once('app\Views\parts\header.php'); ?>
     <div class="py-1">
         <img class="d-block mx-auto mb-4" src="app\Views\img\icone_certifico_site.png" alt="" width="72" height="72">
         <h2>Inscrições Online</h2>
@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col-md-6 order-md-1">
-            <form class="needs-validation" action="/save_inscricao" method="POST" novalidate>
+            <form class="needs-validation" action="/save_inscricao_users" method="POST" novalidate>
 
                 <?php if (count($valores) > 0): ?>
 

@@ -1,4 +1,4 @@
-<?php include_once('app\Views\parts\header-adm.php'); ?>
+<?php include_once('app\Views\parts\header.php'); ?>
     <div class="py-1">
         <img class="d-block mx-auto mb-4" src="app\Views\img\icone_certifico_site.png" alt="" width="72" height="72">
         <h2>Gere seu certificado online</h2>
@@ -8,9 +8,7 @@
             <div class="col-md-12 mb-3">
                     <div class="resultadoForm">
                         <input type="hidden" name="participante_id" id="txtstart"/>
-
                             <table class="table">
-
                             <thead>
                                 <tr>
                                     <td>EVENTO</td>
@@ -28,7 +26,7 @@
                                           <td><?php echo $user['local']; ?></td>
 
                                           <td>
-                                            <form class="" action="/emitir" method="post">
+                                            <form class="" action="/emitir_users" method="post">
                                               <input type="hidden" name="cpf" value="<?php echo $user['cpf']; ?>">
                                               <input type="hidden" name="curso" value="<?php echo $user['curso']; ?>">
                                               <input type="hidden" name="id" value="<?php echo $user['id']; ?>">

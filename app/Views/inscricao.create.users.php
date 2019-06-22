@@ -1,4 +1,4 @@
-<?php include_once('app\Views\parts\header-adm.php'); ?>
+<?php include_once('app\Views\parts\header.php'); ?>
     <div class="py-1">
         <img class="d-block mx-auto mb-4" src="app\Views\img\icone_certifico_site.png" alt="" width="72" height="72">
         <h2>Inscrições Online</h2>
@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col-md-12 order-md-1">
-            <form class="needs-validation" name="formEscola" id="formEscola" action="/participante_busca" method="POST">
+            <form class="needs-validation" name="formEscola" id="formEscola" action="/participante_busca_users" method="POST">
                 <div class="row">
                     <div class="input-group col-md-4 mb-3">
                         <input type="text" class="search-query form-control" id="cpf" name="cpf" placeholder="Buscar por CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this);">
@@ -23,7 +23,7 @@
                 </div>
             </form>
 
-            <form class="needs-validation" action="/finalizar_inscricao" method="POST" novalidate>
+            <form class="needs-validation" action="/finalizar_inscricao_users" method="POST" novalidate>
                 <div class="row">
                     <div class="col-md-8 mb-3">
 

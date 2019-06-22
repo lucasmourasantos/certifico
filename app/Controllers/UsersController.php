@@ -9,6 +9,9 @@ class UsersController {
 * Classe com um método para cada rota definida no index.php
 */
 /** * Listagem de usuários */
+public function public() {
+  \App\View::make('users.public');
+}
 public function login() {
   \App\View::make('login.create');
 }
@@ -16,6 +19,13 @@ public function logout() {
   if (User::signOut())
   {
       header('Location: /');
+      exit;
+  }
+}
+public function logout_adm() {
+  if (User::signOut())
+  {
+      header('Location: /adm-login');
       exit;
   }
 }
@@ -33,16 +43,52 @@ public function sign() {
   }else{
     echo "<script>
         alert ('Usuario ou senha invalidos!');
+        window.location.href= '/adm-login';
+        </script>";
+    $message = '<label>Dados incorretos.</label>';
+  }
+  //\App\View::make('login.cad');
+}
+public function sign_public() {
+  $usuario = isset($_POST['usuario']) ? $_POST['usuario'] : null;
+  $senha = isset($_POST['senha']) ? $_POST['senha'] : null;
+
+  if (User::sign($usuario, $senha))
+  {
+      header('Location: index-users');
+      exit;
+  }else{
+    echo "<script>
+        alert ('Usuario ou senha invalidos!');
         window.location.href= '/';
         </script>";
     $message = '<label>Dados incorretos.</label>';
   }
   //\App\View::make('login.cad');
 }
-  public function index() {
-    \App\View::make('users.index');
-  }
+public function save_cad_login()
+{
+    // pega os dados do formuário
+    $nome = isset($_POST['username']) ? $_POST['username'] : null;
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $password_1 = isset($_POST['password_1']) ? $_POST['password_1'] : null;
+    $password_2 = isset($_POST['password_2']) ? $_POST['password_2'] : null;
 
+    if (User::save_cad_login($nome, $email, $password_1, $password_2))
+    {
+        header('Location: /adm-login');
+        exit;
+    }
+}
+  public function index_public() {
+    \App\View::make('users.public');
+  }
+  public function index_users() {
+    \App\View::make('users.user');
+  }
+  public function index() {
+    \App\View::make('users.adm');
+  }
     /**
      * Exibe o formulário de criação
      */
@@ -66,6 +112,12 @@ public function sign() {
         $cpf = null;
         \App\View::make('inscricao.create', ['users' => $users, 'cpf' => $cpf,]);
     }
+    public function cad_inscricao_users()
+    {
+        $users = User::selectAllEventos();
+        $cpf = null;
+        \App\View::make('inscricao.create.users', ['users' => $users, 'cpf' => $cpf,]);
+    }
     public function cad_certificado()
     {
         $users = User::selectAllEventos();
@@ -75,7 +127,10 @@ public function sign() {
     {
         \App\View::make('participante.create');
     }
-
+    public function cad_participante_users()
+    {
+        \App\View::make('participante.create.users');
+    }
     public function relatorio()
     {
         \App\View::make('participante.rel');
@@ -84,11 +139,29 @@ public function sign() {
     {
         \App\View::make('certificado.gerar');
     }
+    public function emitir_cert_users()
+    {
+        \App\View::make('certificado.gerar.users');
+    }
     public function verificar_cert()
     {
         $codigo = isset($_POST['codigo']) ? $_POST['codigo'] : null;
         $users = User::verificar_certificado($codigo);
         \App\View::make('certificado.verificar', ['users' => $users,]);
+    }
+
+    public function verificar_cert_public()
+    {
+        $codigo = isset($_POST['codigo']) ? $_POST['codigo'] : null;
+        $users = User::verificar_certificado($codigo);
+        \App\View::make('certificado.verificar.public', ['users' => $users,]);
+    }
+
+    public function verificar_cert_users()
+    {
+        $codigo = isset($_POST['codigo']) ? $_POST['codigo'] : null;
+        $users = User::verificar_certificado($codigo);
+        \App\View::make('certificado.verificar.users', ['users' => $users,]);
     }
 
     public function emitir()
@@ -104,6 +177,19 @@ public function sign() {
         //$valores = [$cpf, $curso, $id, $id_curso];
         \App\View::make('certificado.emitir', ['objetos' => $objetos,]);
     }
+    public function emitir_users()
+    {
+
+        $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : null;
+        $curso = isset($_POST['curso']) ? $_POST['curso'] : null;
+        $id = isset($_POST['id']) ? $_POST['id'] : null;
+        $id_curso = isset($_POST['id_curso']) ? $_POST['id_curso'] : null;
+
+        $objetos = array($cpf, $curso, $id, $id_curso);
+        //$users = User::verificaCampos($cpf, $curso, $id, $id_curso);
+        //$valores = [$cpf, $curso, $id, $id_curso];
+        \App\View::make('certificado.emitir.users', ['objetos' => $objetos,]);
+    }
 
     public function emitir_cert_gerar()
     {
@@ -111,13 +197,25 @@ public function sign() {
         $users = User::selectAprovados($cpf);
         \App\View::make('certificado.gerar_2', ['users' => $users,]);
     }
-
+    public function emitir_cert_gerar_users()
+    {
+        $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : null;
+        $users = User::selectAprovados($cpf);
+        \App\View::make('certificado.gerar_2.users', ['users' => $users,]);
+    }
     public function busca()
     {
         $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : null;
         $users = User::selectAllEventos();
         $cpf = User::busca($cpf);
         \App\View::make('inscricao.create', ['users' => $users, 'cpf' => $cpf,]);
+    }
+    public function busca_users()
+    {
+        $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : null;
+        $users = User::selectAllEventos();
+        $cpf = User::busca($cpf);
+        \App\View::make('inscricao.create.users', ['users' => $users, 'cpf' => $cpf,]);
     }
 
     public function buscaCursos()
@@ -130,6 +228,17 @@ public function sign() {
         //$valores = array('id_part' => $participante_id, 'nome_part' => $participante_nome, 'evento_id' => $evento_id, );
         $cursos = User::selectAllCursos($evento_id);
         \App\View::make('inscricao.create_2', ['cursos' => $cursos, 'valores' => $valores, ]);
+    }
+    public function buscaCursos_users()
+    {
+        $participante_id = isset($_POST['participante_id']) ? $_POST['participante_id'] : null;
+        $participante_nome = isset($_POST['participante_nome']) ? $_POST['participante_nome'] : null;
+        $evento_id = isset($_POST['id_evento']) ? $_POST['id_evento'] : null;
+        $evento_nome = isset($_POST['evento_nome']) ? $_POST['evento_nome'] : null;
+        $valores = [$participante_id, $participante_nome, $evento_id, $evento_nome];
+        //$valores = array('id_part' => $participante_id, 'nome_part' => $participante_nome, 'evento_id' => $evento_id, );
+        $cursos = User::selectAllCursos($evento_id);
+        \App\View::make('inscricao.create_2.users', ['cursos' => $cursos, 'valores' => $valores, ]);
     }
 
     /**
@@ -192,6 +301,19 @@ public function sign() {
              exit;
          }
      }
+     public function inscricao_users()
+     {
+         // pega os dados do formuário
+         $participante_id = isset($_POST['participante_id']) ? $_POST['participante_id'] : null;
+         $curso_id = isset($_POST['id_curso']) ? $_POST['id_curso'] : null;
+         $evento_id = isset($_POST['evento_id']) ? $_POST['evento_id'] : null;
+
+         if (User::save_inscricao($participante_id, $curso_id, $evento_id))
+         {
+             header('Location: /inscricao_users');
+             exit;
+         }
+     }
 
      public function certificado()
      {
@@ -237,7 +359,27 @@ public function sign() {
              exit;
          }
      }
+     public function participante_users()
+     {
+         // pega os dados do formuário
+         $nome = isset($_POST['nome']) ? $_POST['nome'] : null;
+         $sexo = isset($_POST['sexo']) ? $_POST['sexo'] : null;
+         $rg = isset($_POST['rg']) ? $_POST['rg'] : null;
+         $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : null;
+         $data_nasc = isset($_POST['data_nasc']) ? $_POST['data_nasc'] : null;
+         $cep = isset($_POST['cep']) ? $_POST['cep'] : null;
+         $rua = isset($_POST['rua']) ? $_POST['rua'] : null;
+         $bairro = isset($_POST['bairro']) ? $_POST['bairro'] : null;
+         $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : null;
+         $estado = isset($_POST['uf']) ? $_POST['uf'] : null;
+         $fone = isset($_POST['fone']) ? $_POST['fone'] : null;
 
+         if (User::save_participante($nome, $sexo, $rg, $cpf, $data_nasc, $cep, $rua, $bairro, $cidade, $estado, $fone))
+         {
+             header('Location: /participante_users');
+             exit;
+         }
+     }
 
 
 

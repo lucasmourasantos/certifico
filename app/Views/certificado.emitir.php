@@ -75,7 +75,7 @@ class myPDF extends FPDF {
         $stmt1 = $DB->query("SELECT COUNT(hora) as result FROM ponto WHERE curso_id = '" . $id_curso . "' and participante_id = '" . $id_participante . "'");
         $result = null;
 
-        if (count($stmt1)) {
+        if (!empty($stmt1)) {
             foreach ($stmt1 as $res) {
                 $result = $res['result'];
             }
