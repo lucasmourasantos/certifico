@@ -136,7 +136,7 @@ public static function selectAprovados($cpf) {
         $DB = new DB;
         $sql = "INSERT INTO instituicao (nome) VALUES(:nome)";
         $stmt = $DB->prepare($sql);
-        $stmt->bindParam(':nome', $nome);
+        $stmt->Utf8_encode(bindParam(':nome', $nome));
 
         if ($stmt->execute())
         {
@@ -156,7 +156,7 @@ public static function selectAprovados($cpf) {
         $sql = "INSERT INTO evento (instituicao_id, nome) VALUES(:instituicao_id, :nome)";
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':instituicao_id', $instituicao_id);
-        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':nome', utf8_encode($nome));
 
         if ($stmt->execute())
         {

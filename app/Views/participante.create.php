@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="dtNasc">Data de Nascimento</label>
-                        <input type="text" class="form-control" id="dtNasc" name="data_nasc" placeholder="04/02/2019">
+                        <input type="text" class="form-control" id="dtNasc" name="data_nasc" placeholder="04/02/2019" maxlength="10" onkeypress="formatar('##/##/####', this);">
                         <div class="invalid-feedback">
                             Please enter a valid email address for shipping updates.
                         </div>

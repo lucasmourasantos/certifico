@@ -6,7 +6,7 @@ define('BASE_PATH', dirname(__FILE__));
 define('MYSQL_HOST', 'localhost');
 define('MYSQL_USER', 'root');
 define('MYSQL_PASS', '');
-define('MYSQL_DBNAME', 'fingerprint');
+define('MYSQL_DBNAME', 'fingerprints');
 
 // configurações do PHP
 ini_set('display_errors', true);

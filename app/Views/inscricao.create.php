@@ -29,7 +29,7 @@
                         <div class="resultadoForm">
 
 
-                            <?php if (count($cpf) > 0): ?>
+                            <?php if (!empty($cpf)): ?>
                                 <?php foreach ($cpf as $userCPF): ?>
                                     <input type="hidden" name="participante_id" id="participante_id" value="<?php echo $userCPF['id']; ?>"/>
                                     <input type="hidden" name="participante_nome" id="participante_nome" value="<?php echo $userCPF['nome']; ?>"/>
@@ -50,8 +50,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            <?php else: ?>
-                                <span>Nenhum participante selecionado</span>
                             <?php endif; ?>
 
                         </div>

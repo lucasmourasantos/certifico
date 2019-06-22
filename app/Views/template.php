@@ -57,6 +57,9 @@
     <link href="app\Views\css\form-validation.css" rel="stylesheet">
     <link href="app\Views\css\navbar-top-fixed.css" rel="stylesheet">
 
+    <!--
+<link href="app\Views\css\signin.css" rel="stylesheet">
+  -->
     <!-- Adicionando Javascript Busca Endereço pelo CEP-->
         <script type="text/javascript" >
 
@@ -181,6 +184,11 @@
                   <a class="nav-link" href="logout">Sair</a>
               </li>
             </ul>
+            <form class="navbar-form pull-right" action="/login" method="post">
+              <input name="usuario" id="usuario" class="span2" type="text" placeholder="Email" style="padding: 0px 8px 4px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">
+              <input name="senha" id="senha" class="span2" type="password" placeholder="Senha" style="padding: 0px 8px 4px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">
+              <button class="span2 btn btn-primary" type="submit" style="padding: 0px 8px 5px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">Login</button>
+            </form>
         </div>
     </nav>
 <main role="main" class="container">
