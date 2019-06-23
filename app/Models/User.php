@@ -14,7 +14,7 @@ $DB = new DB;
   if (empty($usuario) || empty($senha)) {
           $message = '<label>All fields are required</label>';
       } else {
-          $query = "SELECT * FROM users WHERE usuario = :usuario AND senha = :senha";
+          $query = "SELECT * FROM heroku_78a881d13ca0c35.users WHERE usuario = :usuario AND senha = :senha";
           $statement = $DB->prepare($query);
           $statement->execute(
                   array(
@@ -38,7 +38,7 @@ $DB = new DB;
           $message = '<label>All fields are required</label>';
       } else {
         // insere no banco
-        $sql = "INSERT INTO users (usuario, email, senha)
+        $sql = "INSERT INTO heroku_78a881d13ca0c35.users (usuario, email, senha)
                 VALUES(:nome, :email, :password_1)";
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':nome', $nome);
@@ -79,7 +79,7 @@ public static function selectAll() {
 
 public static function selectAllEventos() {
 
-  $sql = sprintf("SELECT * FROM evento order by nome ASC");
+  $sql = sprintf("SELECT * FROM heroku_78a881d13ca0c35.evento order by nome ASC");
   $DB = new DB;
   $stmt = $DB->prepare($sql);
 
@@ -92,7 +92,7 @@ public static function selectAllEventos() {
 
 public static function selectAllCursos($evento_id) {
 
-  $sql = "SELECT * FROM curso where evento_id = :evento_id order by nome ASC";
+  $sql = "SELECT * FROM heroku_78a881d13ca0c35.curso where evento_id = :evento_id order by nome ASC";
   $DB = new DB;
   $stmt = $DB->prepare($sql);
   $stmt->bindParam(':evento_id', $evento_id, \PDO::PARAM_INT);
@@ -106,7 +106,7 @@ public static function selectAllCursos($evento_id) {
 
 public static function busca($cpf) {
 
-  $sql = "SELECT id, nome, cpf FROM participante where cpf = :cpf";
+  $sql = "SELECT id, nome, cpf FROM heroku_78a881d13ca0c35.participante where cpf = :cpf";
   $DB = new DB;
   $stmt = $DB->prepare($sql);
   $stmt->bindParam(':cpf', $cpf, \PDO::PARAM_STR);
@@ -119,7 +119,7 @@ public static function busca($cpf) {
 
 public static function verificar_certificado($codigo) {
 
-  $sql = "SELECT * FROM validacao where codigo like :codigo";
+  $sql = "SELECT * FROM heroku_78a881d13ca0c35.validacao where codigo like :codigo";
   $DB = new DB;
   $stmt = $DB->prepare($sql);
   $stmt->bindParam(':codigo', $codigo, \PDO::PARAM_STR);
@@ -133,10 +133,10 @@ public static function verificar_certificado($codigo) {
 
 public static function selectAprovados($cpf) {
 
-  $sql = "select p.id, p.cpf, c.id as id_curso, c.nome as curso, e.nome as evento, (select i.nome from instituicao i where i.id=e.instituicao_id) as local from participante p
-          join participante_tem_curso ptc on p.id=ptc.participante_id
-          join curso c on c.id=ptc.curso_id
-          join evento e on e.id=ptc.evento_id where p.cpf like :cpf order by p.nome";
+  $sql = "select p.id, p.cpf, c.id as id_curso, c.nome as curso, e.nome as evento, (select i.nome from heroku_78a881d13ca0c35.instituicao i where i.id=e.instituicao_id) as local from heroku_78a881d13ca0c35.participante p
+          join heroku_78a881d13ca0c35.participante_tem_curso ptc on p.id=ptc.participante_id
+          join heroku_78a881d13ca0c35.curso c on c.id=ptc.curso_id
+          join heroku_78a881d13ca0c35.evento e on e.id=ptc.evento_id where p.cpf like :cpf order by p.nome";
   $DB = new DB;
   $stmt = $DB->prepare($sql);
   $stmt->bindParam(':cpf', $cpf, \PDO::PARAM_STR);
@@ -179,7 +179,7 @@ public static function selectAprovados($cpf) {
     public static function save_evento($nome, $instituicao_id) {
         // insere no banco
         $DB = new DB;
-        $sql = "INSERT INTO evento (instituicao_id, nome) VALUES(:instituicao_id, :nome)";
+        $sql = "INSERT INTO heroku_78a881d13ca0c35.evento (instituicao_id, nome) VALUES(:instituicao_id, :nome)";
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':instituicao_id', $instituicao_id);
         $stmt->bindParam(':nome', utf8_encode($nome));
@@ -199,7 +199,7 @@ public static function selectAprovados($cpf) {
     public static function save_curso($evento_id, $nome, $ministrante, $ch, $ch_min, $inicio, $fim, $turno) {
         // insere no banco
         $DB = new DB;
-        $sql = "INSERT INTO curso (evento_id, nome, ministrante, ch, ch_min, inicio, fim, turno)
+        $sql = "INSERT INTO heroku_78a881d13ca0c35.curso (evento_id, nome, ministrante, ch, ch_min, inicio, fim, turno)
                 VALUES(:evento_id, :nome, :ministrante, :ch, :ch_min, :inicio, :fim, :turno)";
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':evento_id', $evento_id);
@@ -226,7 +226,7 @@ public static function selectAprovados($cpf) {
     public static function save_inscricao($participante_id, $curso_id, $evento_id) {
         // insere no banco
         $DB = new DB;
-        $sql = "INSERT INTO participante_tem_curso (participante_id, curso_id, evento_id) VALUES(:participante_id, :curso_id, :evento_id)";
+        $sql = "INSERT INTO heroku_78a881d13ca0c35.participante_tem_curso (participante_id, curso_id, evento_id) VALUES(:participante_id, :curso_id, :evento_id)";
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':participante_id', $participante_id);
         $stmt->bindParam(':curso_id', $curso_id);
@@ -247,7 +247,7 @@ public static function selectAprovados($cpf) {
     public static function save_participante($nome, $sexo, $rg, $cpf, $data_nasc, $cep, $rua, $bairro, $cidade, $estado, $fone) {
         // insere no banco
         $DB = new DB;
-        $sql = "INSERT INTO participante (nome, sexo, rg, cpf, data_nasc, cep, rua, bairro, cidade, estado, fone)
+        $sql = "INSERT INTO heroku_78a881d13ca0c35.participante (nome, sexo, rg, cpf, data_nasc, cep, rua, bairro, cidade, estado, fone)
                 VALUES(:nome, :sexo, :rg, :cpf, :data_nasc, :cep, :rua, :bairro, :cidade, :estado, :fone)";
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':nome', $nome);
@@ -277,7 +277,7 @@ public static function selectAprovados($cpf) {
     public static function save_certificado($evento_id, $layout, $ass) {
         // insere no banco
         $DB = new DB;
-        $sql = "INSERT INTO certificado (evento_id, layout, ass) VALUES(:evento_id, :layout, :ass)";
+        $sql = "INSERT INTO heroku_78a881d13ca0c35.certificado (evento_id, layout, ass) VALUES(:evento_id, :layout, :ass)";
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':evento_id', $evento_id);
         $stmt->bindParam(':layout', $layout);
