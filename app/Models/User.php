@@ -66,7 +66,7 @@ public static function signOut() {
 
 public static function selectAll() {
 
-  $sql = sprintf("SELECT * FROM instituicao order by nome ASC");
+  $sql = sprintf("SELECT * FROM heroku_78a881d13ca0c35.instituicao order by nome ASC");
   $DB = new DB;
   $stmt = $DB->prepare($sql);
 
