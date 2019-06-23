@@ -160,7 +160,7 @@ public static function selectAprovados($cpf) {
 
         // insere no banco
         $DB = new DB;
-        $sql = "INSERT INTO instituicao (nome) VALUES(:nome)";
+        $sql = "INSERT INTO heroku_78a881d13ca0c35.instituicao (nome) VALUES(:nome)";
         $stmt = $DB->prepare($sql);
         $stmt->Utf8_encode(bindParam(':nome', $nome));
 
