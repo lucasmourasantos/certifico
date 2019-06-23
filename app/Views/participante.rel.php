@@ -4,7 +4,7 @@
  * :::::::RELATÓRIO DE PARTICIPANTES:::::::
  */
 
-require('app\Views\relatorios\fpdf.php');
+require('relatorios/fpdf.php');
 use App\DB;
 $DB = new DB;
 
