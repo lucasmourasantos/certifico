@@ -4,6 +4,25 @@ namespace app;
 
 class DB extends \PDO
 {
+  $url = parse_url(getenv("mysql://b5ee2adc25aa24:2ed683a3@us-cdbr-iron-east-02.cleardb.net/heroku_78a881d13ca0c35?reconnect=true"));
+
+  $server = $url["us-cdbr-iron-east-02.cleardb.net"];
+  $username = $url["b5ee2adc25aa24"];
+  $password = $url["2ed683a3"];
+  $db = substr($url["heroku_78a881d13ca0c35"], 1);
+
+  /*
+  $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+  $conn = new mysqli($server, $username, $password, $db);
+  */
+
+  // credenciais de acesso ao MySQL
+  define('MYSQL_HOST', $server);
+  define('MYSQL_USER', $username);
+  define('MYSQL_PASS', $password);
+  define('MYSQL_DBNAME', $db);
+
     public function __construct($dsn = null, $username = null, $password = null, $options = array())
     {
         $dsn = ($dsn != null) ? $dsn : sprintf('mysql:dbname=%s;host=%s', MYSQL_DBNAME, MYSQL_HOST);
