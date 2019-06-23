@@ -2,7 +2,7 @@
 // diretório base da aplicação
 define('BASE_PATH', dirname(__FILE__));
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$url = parse_url(getenv("mysql://b5ee2adc25aa24:2ed683a3@us-cdbr-iron-east-02.cleardb.net/heroku_78a881d13ca0c35?reconnect=true"));
 
 $server = $url["us-cdbr-iron-east-02.cleardb.net"];
 $username = $url["b5ee2adc25aa24"];
