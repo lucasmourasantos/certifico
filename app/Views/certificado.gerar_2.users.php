@@ -1,6 +1,6 @@
 <?php
 //login_success.php
-session_start();
+//session_start();
 if (isset($_SESSION["usuario"])) {
 ?>
 <?php include_once('parts/header.php'); ?>
