@@ -33,7 +33,7 @@ if (isset($_SESSION["usuario"])) {
                                           <td><?php echo $user['local']; ?></td>
 
                                           <td>
-                                            <form class="" action="/emitir" method="post">
+                                            <form class="" action="/emitir" method="post" target="_blank">
                                               <input type="hidden" name="cpf" value="<?php echo $user['cpf']; ?>">
                                               <input type="hidden" name="curso" value="<?php echo $user['curso']; ?>">
                                               <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
