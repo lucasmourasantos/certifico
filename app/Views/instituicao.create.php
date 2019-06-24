@@ -1,3 +1,9 @@
+<?php
+//login_success.php
+session_start();
+if (isset($_SESSION["usuario"])) {
+?>
+
 <?php include_once('parts/header-adm.php'); ?>
     <div class="py-1 text-center">
         <img class="d-block mx-auto mb-4" src="app\Views\img\icone_certifico_site.png" alt="" width="72" height="72">
@@ -22,3 +28,10 @@
         </div>
     </div>
 <?php include_once('parts/footer.php'); ?>
+
+<?php
+} else {
+      header("location: /");
+      exit;
+}
+ ?><!-- Caso sessão esteja vazia -->
