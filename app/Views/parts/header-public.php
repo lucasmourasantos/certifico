@@ -68,17 +68,15 @@
                       <a class="dropdown-item" href="/verificar_cert_public">Validar Certificado</a>
                   </div>
               </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/login-novo-users">Cadastre-se<span class="sr-only">(current)</span></a>
+              </li>
             </ul>
             <form class="navbar-form pull-right" action="/login-public" method="post">
               <input name="usuario" id="usuario" class="span2" type="text" placeholder="Email" style="padding: 0px 8px 4px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">
               <input name="senha" id="senha" class="span2" type="password" placeholder="Senha" style="padding: 0px 8px 4px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">
               <button class="span2 btn btn-primary" type="submit" style="padding: 0px 8px 5px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">Login</button>
             </form>
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="/login-novo-users">Cadastre-se<span class="sr-only">(current)</span></a>
-              </li>
-            </ul>
         </div>
     </nav>
 <main role="main" class="container">
