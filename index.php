@@ -51,10 +51,20 @@ $app->get('/login-novo', function ()
     $UsersController = new \App\Controllers\UsersController;
     $UsersController->login_cad();
 });
+$app->get('/login-novo-users', function ()
+{
+    $UsersController = new \App\Controllers\UsersController;
+    $UsersController->login_cad_users();
+});
 $app->post('/save_cad_login', function ()
 {
     $UsersController = new \App\Controllers\UsersController;
     $UsersController->save_cad_login();
+});
+$app->post('/save_cad_login_users', function ()
+{
+    $UsersController = new \App\Controllers\UsersController;
+    $UsersController->save_cad_login_users();
 });
 $app->get('/index-adm', function ()
 {

@@ -32,6 +32,9 @@ public function logout_adm() {
 public function login_cad() {
   \App\View::make('login.cad');
 }
+public function login_cad_users() {
+  \App\View::make('login.cad.users');
+}
 public function sign() {
   $usuario = isset($_POST['usuario']) ? $_POST['usuario'] : null;
   $senha = isset($_POST['senha']) ? $_POST['senha'] : null;
@@ -77,6 +80,20 @@ public function save_cad_login()
     if (User::save_cad_login($nome, $email, $password_1, $password_2))
     {
         header('Location: /adm-login');
+        exit;
+    }
+}
+public function save_cad_login_users()
+{
+    // pega os dados do formuário
+    $nome = isset($_POST['username']) ? $_POST['username'] : null;
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $password_1 = isset($_POST['password_1']) ? $_POST['password_1'] : null;
+    $password_2 = isset($_POST['password_2']) ? $_POST['password_2'] : null;
+
+    if (User::save_cad_login($nome, $email, $password_1, $password_2))
+    {
+        header('Location: /');
         exit;
     }
 }

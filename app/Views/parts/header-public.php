@@ -74,6 +74,11 @@
               <input name="senha" id="senha" class="span2" type="password" placeholder="Senha" style="padding: 0px 8px 4px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">
               <button class="span2 btn btn-primary" type="submit" style="padding: 0px 8px 5px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">Login</button>
             </form>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/login-novo-users">Cadastre-se<span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
         </div>
     </nav>
 <main role="main" class="container">

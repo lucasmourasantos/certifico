@@ -47,11 +47,13 @@ $DB = new DB;
 
         if ($stmt->execute())
         {
+          $_SESSION['success'] = "<div class='alert alert-success' role='alert'>Cadastrado com sucesso!</div>";
             return true;
         }
         else
         {
-            echo "Erro ao cadastrar";
+            $_SESSION['error'] = "<div class='alert alert-danger' role='alert'>Erro ao cadastrar!</div>";
+            //echo "Erro ao cadastrar";
             print_r($stmt->errorInfo());
             return false;
         }
@@ -154,6 +156,7 @@ public static function selectAprovados($cpf) {
         // validação (bem simples, só pra evitar dados vazios)
         if (empty($nome))
         {
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Preencha todos os campos!</div>";
             echo "Volte e preencha todos os campos";
             return false;
         }
@@ -166,11 +169,13 @@ public static function selectAprovados($cpf) {
 
         if ($stmt->execute())
         {
+          $_SESSION['success'] = "<div class='alert alert-success' role='alert'>Cadastrado com sucesso!</div>";
             return true;
         }
         else
         {
-            echo "Erro ao cadastrar";
+          $_SESSION['error'] = "<div class='alert alert-danger' role='alert'>Erro ao cadastrar!</div>";
+            //echo "Erro ao cadastrar";
             print_r($stmt->errorInfo());
             return false;
         }
