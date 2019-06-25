@@ -191,11 +191,12 @@ public static function selectAprovados($cpf) {
 
         if ($stmt->execute())
         {
+          $_SESSION['success'] = "";
             return true;
         }
         else
         {
-            echo "Erro ao cadastrar";
+            $_SESSION['error'] = "";
             print_r($stmt->errorInfo());
             return false;
         }
@@ -218,11 +219,12 @@ public static function selectAprovados($cpf) {
 
         if ($stmt->execute())
         {
+          $_SESSION['success'] = "";
             return true;
         }
         else
         {
-            echo "Erro ao cadastrar";
+            $_SESSION['error'] = "";
             print_r($stmt->errorInfo());
             return false;
         }
@@ -239,11 +241,12 @@ public static function selectAprovados($cpf) {
 
         if ($stmt->execute())
         {
+          $_SESSION['success'] = "";
             return true;
         }
         else
         {
-            echo "Erro ao cadastrar";
+            $_SESSION['error'] = "";
             print_r($stmt->errorInfo());
             return false;
         }
@@ -269,10 +272,12 @@ public static function selectAprovados($cpf) {
 
         if ($stmt->execute())
         {
+          $_SESSION['success'] = "";
             return true;
         }
         else
         {
+          $_SESSION['error'] = "";
             echo "Erro ao cadastrar";
             print_r($stmt->errorInfo());
             return false;
@@ -290,11 +295,12 @@ public static function selectAprovados($cpf) {
 
         if ($stmt->execute())
         {
+          $_SESSION['success'] = "";
             return true;
         }
         else
         {
-            echo "Erro ao cadastrar";
+            $_SESSION['error'] = "";
             print_r($stmt->errorInfo());
             return false;
         }

@@ -5,6 +5,16 @@ if (isset($_SESSION["usuario"])) {
 ?>
 
 <?php include_once('parts/header-adm.php'); ?>
+<?php
+  if(isset($_SESSION["success"])):
+    echo "<div class='alert alert-success' role='alert'>Cadastrado com sucesso!</div>";
+    unset($_SESSION["success"]);
+  endif;
+  if(isset($_SESSION["error"])):
+    echo "<div class='alert alert-danger' role='alert'>Erro ao cadastrar!</div>";
+    unset($_SESSION["error"]);
+  endif;
+ ?>
     <div class="py-1">
         <img class="d-block mx-auto mb-4" src="app\Views\img\icone_certifico_site.png" alt="" width="72" height="72">
         <h2>Cadastro de Certificados</h2>

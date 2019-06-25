@@ -270,6 +270,9 @@ public function save_cad_login_users()
          {
              header('Location: /instituicao');
              exit;
+         } esle {
+           header('Location: /instituicao');
+           exit;
          }
      }
 
