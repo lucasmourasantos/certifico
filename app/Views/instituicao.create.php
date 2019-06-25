@@ -7,15 +7,15 @@ if (isset($_SESSION["usuario"])) {
 <?php include_once('parts/header-adm.php'); ?>
 <?php
   if(isset($_SESSION["success"])):
-    print $_SESSION["success"];
+    echo "<div class='alert alert-success' role='alert'>Cadastrado com sucesso!</div>";
     unset($_SESSION["success"]);
   endif;
   if(isset($_SESSION["error"])):
-    print $_SESSION["error"];
+    echo "<div class='alert alert-danger' role='alert'>Erro ao cadastrar!</div>";
     unset($_SESSION["error"]);
   endif;
   if(isset($_SESSION["msg"])):
-    print $_SESSION["msg"];
+    echo "<div class='alert alert-warning' role='alert'>Preencha todos os campos!</div>";
     unset($_SESSION["msg"]);
   endif;
  ?>
