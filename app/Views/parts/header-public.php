@@ -73,7 +73,7 @@
               </li>
             </ul>
             <form class="navbar-form pull-right" action="/login-public" method="post">
-              <input name="usuario" id="usuario" class="span2" type="text" placeholder="Email" style="padding: 0px 8px 4px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">
+              <input name="usuario" id="usuario" class="span2" type="text" placeholder="Nome de usuário" style="padding: 0px 8px 4px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">
               <input name="senha" id="senha" class="span2" type="password" placeholder="Senha" style="padding: 0px 8px 4px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">
               <button class="span2 btn btn-primary" type="submit" style="padding: 0px 8px 5px;font-weight: normal;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;">Login</button>
             </form>
